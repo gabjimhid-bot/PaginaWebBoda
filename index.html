@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miriam &amp; Gabriel · 5 de junio de 2027</title>
+  <meta name="description" content="Nos casamos el 5 de junio de 2027 en Sevilla. Aquí tenéis todos los detalles y podéis confirmar vuestra asistencia.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Miriam &amp; Gabriel">
+  <meta property="og:description" content="Nos casamos el 5 de junio de 2027 en Sevilla. Confirma tu asistencia aquí.">
+  <meta property="og:image" content="https://gabjimhid-bot.github.io/PaginaWebBoda/images/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://gabjimhid-bot.github.io/PaginaWebBoda/">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7f4ee">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="top">
+    <a href="#" class="logo">Miriam &amp; Gabriel</a>
+    <nav class="menu">
+      <a href="#ceremonia">Ceremonia</a>
+      <a href="#hacienda">Hacienda</a>
+      <a href="#confirmacion">Confirmación</a>
+    </nav>
+  </header>
+
+  <main class="escena">
+
+    <!-- Foto fija a la izquierda -->
+    <aside class="foto">
+      <img src="images/ceremonia.jpg" alt="Miriam y Gabriel">
+    </aside>
+
+    <!-- Bloques que aparecen en escalera al hacer scroll -->
+    <div class="pasos">
+
+      <p class="fecha reveal"><span class="dia">05 · 06 · 2027
+        <svg class="trazo" viewBox="0 0 800 160" aria-hidden="true" preserveAspectRatio="none">
+          <path pathLength="1" d="M10,70 C150,92 330,96 470,80 C560,70 600,40 560,28 C520,18 490,60 560,82 C640,104 730,70 790,6"/>
+        </svg></span><span class="lugar">Sevilla</span></p>
+
+      <!-- Al entrar solo se ve el título; el resto (clase "tarde") aparece al empezar a deslizar -->
+      <section id="ceremonia" class="paso paso-1">
+        <h2 class="reveal">Ceremonia</h2>
+        <h3 class="tarde">Basílica del Gran Poder</h3>
+        <p class="tarde">Plaza de San Lorenzo, 13 · Sevilla</p>
+        <p class="hora tarde">5 de junio de 2027 · 18:30 h</p>
+        <a class="mapa tarde" target="_blank" rel="noopener" aria-label="Abrir Basílica del Gran Poder en Google Maps"
+           href="https://www.google.com/maps/search/?api=1&query=Bas%C3%ADlica+del+Gran+Poder+Sevilla">
+          <div class="lienzo" data-lat="37.39718" data-lng="-5.99615" data-zoom="16"></div>
+        </a>
+        <a class="boton tarde" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Bas%C3%ADlica+del+Gran+Poder+Sevilla">Cómo llegar</a>
+      </section>
+
+      <section id="hacienda" class="paso paso-2">
+        <h2 class="reveal">Hacienda</h2>
+        <h3>Hacienda El Pino de San José</h3>
+        <p>Carretera Nacional IV, Km 524,5 · Torrepalma, Sevilla</p>
+        <p class="hora">5 de junio de 2027 · 20:30 h</p>
+        <!-- Coordenadas aproximadas de Torrepalma; afinar si el círculo no cae sobre la Hacienda -->
+        <a class="mapa" target="_blank" rel="noopener" aria-label="Abrir Hacienda El Pino de San José en Google Maps"
+           href="https://www.google.com/maps/search/?api=1&query=Hacienda+El+Pino+de+San+Jos%C3%A9+Carretera+Nacional+IV+Km+524%2C5+41410+Torrepalma+Sevilla">
+          <div class="lienzo" style="height:340px" data-lat="37.4237" data-lng="-5.8155" data-map-lat="37.4276" data-map-lng="-5.8174" data-zoom="13"></div>
+        </a>
+        <a class="boton" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Hacienda+El+Pino+de+San+Jos%C3%A9+Carretera+Nacional+IV+Km+524%2C5+41410+Torrepalma+Sevilla">Cómo llegar</a>
+      </section>
+
+      <section id="confirmacion" class="paso paso-3">
+        <h2 class="reveal">Confirmación</h2>
+        <p class="intro">Por favor, confirmad vuestra asistencia antes del <strong>30 de abril de 2027</strong>.</p>
+
+        <form id="rsvp" novalidate>
+          <label>Nombre
+            <input type="text" name="nombre" data-col="Nombre" required autocomplete="given-name">
+          </label>
+
+          <label>Apellidos
+            <input type="text" name="apellidos" data-col="Apellidos" required autocomplete="family-name" placeholder="Primer y segundo apellido">
+          </label>
+
+          <fieldset>
+            <legend>¿Vendrás a la boda?</legend>
+            <label class="radio"><input type="radio" name="asistencia" data-col="Asistencia" value="Sí" required> Sí, ¡allí estaré!</label>
+            <label class="radio"><input type="radio" name="asistencia" data-col="Asistencia" value="No"> No podré asistir</label>
+          </fieldset>
+
+          <div id="detalles">
+            <fieldset>
+              <legend>¿Vendrás acompañado/a?</legend>
+              <label class="radio"><input type="radio" name="con_acompanante" value="Sí"> Sí</label>
+              <label class="radio"><input type="radio" name="con_acompanante" value="No" checked> No</label>
+            </fieldset>
+
+            <div id="acompanante-box" class="grupo" hidden>
+              <label>Nombre del acompañante
+                <input type="text" name="acompanante_nombre" data-col="Acompañante nombre" autocomplete="off">
+              </label>
+              <label>Apellidos del acompañante
+                <input type="text" name="acompanante_apellidos" data-col="Acompañante apellidos" autocomplete="off" placeholder="Primer y segundo apellido">
+              </label>
+            </div>
+
+            <label>Alergias o intolerancias alimentarias
+              <input type="text" name="alergias" data-col="Alergias" placeholder="Ninguna">
+            </label>
+
+            <fieldset>
+              <legend>¿Necesitarás autobús?</legend>
+              <label class="radio"><input type="radio" name="autobus" data-col="Autobús" value="Sí"> Sí</label>
+              <label class="radio"><input type="radio" name="autobus" data-col="Autobús" value="No" checked> No</label>
+            </fieldset>
+
+            <!-- Trayecto del autobús (sin título ni horarios por ahora). Si se quieren mostrar los horarios,
+                 añadir dentro un <p class="aviso">…</p> con el texto (p. ej. ida calle Torneo 20:00; vuelta 01:00 y 06:30). -->
+            <fieldset id="trayecto-box" aria-label="Trayecto del autobús" hidden>
+              <label class="radio"><input type="radio" name="trayecto" data-col="Trayecto autobús" value="Ida"> Ida</label>
+              <label class="radio"><input type="radio" name="trayecto" data-col="Trayecto autobús" value="Vuelta"> Vuelta</label>
+              <label class="radio"><input type="radio" name="trayecto" data-col="Trayecto autobús" value="Ida y vuelta"> Ida y vuelta</label>
+            </fieldset>
+          </div>
+
+          <label>Comentarios
+            <textarea name="comentarios" data-col="Comentarios" rows="3"></textarea>
+          </label>
+
+          <input type="text" name="web" class="hp" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="boton">Enviar</button>
+          <p id="estado" role="status"></p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    Miriam &amp; Gabriel
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
