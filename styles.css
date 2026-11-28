@@ -32,7 +32,7 @@ body {
 .menu a:hover { opacity: .5; }
 /* Barrita vertical entre las secciones del menú (centrada en el hueco; no es clicable) */
 .menu a + a { position: relative; }
-.menu a + a::before { content: ""; position: absolute; left: calc(var(--hueco) / -2); top: 50%; width: 1px; height: 1.1em; background: #b9b2a6; transform: translate(-50%, -50%); pointer-events: none; }
+.menu a + a::before { content: ""; position: absolute; left: calc(var(--hueco) / -2); top: 50%; width: 1px; height: 1.2em; background: #8f8a82; transform: translate(-50%, -50%); pointer-events: none; }
 
 /* Escena: foto fija a la izquierda + bloques en escalera a la derecha */
 .escena {
