@@ -122,11 +122,13 @@ actualizar();
 
 // Cada campo con data-col="Título" se envía como una columna con ese título, siempre en el orden de la página
 // (vacío si está oculto o sin marcar). Para añadir una pregunta basta con ponerle name y data-col en el HTML.
-// Orden FIJO de las columnas en la hoja "Respuestas". Las fórmulas de la pestaña "invitados" usan estas letras
-// (B Nombre … J Comentarios, K Acompañante alergias), así que el orden NO depende de cómo estén colocadas las
-// preguntas en la página. Una pregunta nueva que no esté en esta lista se añade al final.
-const ORDEN_COLUMNAS = ['Nombre', 'Apellidos', 'Asistencia', 'Acompañante nombre', 'Acompañante apellidos',
-  'Alergias', 'Autobús', 'Trayecto autobús', 'Comentarios', 'Acompañante alergias'];
+// Orden FIJO de las columnas en la hoja "Respuestas" (A es la Fecha, que pone el script). Las fórmulas de la
+// pestaña "invitados" usan estas letras: B Nombre · C Apellidos · D Asistencia · E Alergias · F Acompañante nombre ·
+// G Acompañante apellidos · H Acompañante alergias · I Autobús · J Trayecto autobús · K Comentarios.
+// Si se cambia este orden, hay que borrar la pestaña Respuestas (se recrea sola) y ajustar esas fórmulas.
+// Una pregunta nueva que no esté en esta lista se añade al final.
+const ORDEN_COLUMNAS = ['Nombre', 'Apellidos', 'Asistencia', 'Alergias', 'Acompañante nombre', 'Acompañante apellidos',
+  'Acompañante alergias', 'Autobús', 'Trayecto autobús', 'Comentarios'];
 
 function datosParaEnviar() {
   const valores = {};
