@@ -1,5 +1,5 @@
 // Pega aquí la URL de tu Apps Script publicado como "Aplicación web" (ver LEEME.md)
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1l0zXGdljV7vPrvnxoqAWrswFHM2wQfHNqkt0FPXYK75Fq8MBydeF28d0hNwAHkRt/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOivWzn_PrLhKU0TxaA-wquyLmsMGrG4TknDb-MElau0q1jZYXtiuowSuIP3sqKc03/exec';
 
 // Al recargar la página (o volver a ella) se empieza siempre arriba, sin que el navegador recuerde el scroll
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
