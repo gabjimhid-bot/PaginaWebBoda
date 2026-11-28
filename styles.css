@@ -27,12 +27,15 @@ body {
 }
 .top a { color: inherit; text-decoration: none; }
 .logo { font-family: var(--font-title); font-weight: 600; color: #222; font-size: 1.1rem; letter-spacing: .3em; text-transform: uppercase; line-height: 1; white-space: nowrap; display: block; width: var(--logo-w); text-align: center; }
-.menu { --hueco: 3.5rem; display: flex; gap: var(--hueco); font-family: var(--font-title); font-size: 1.05rem; letter-spacing: .18em; text-transform: uppercase; color: #555; }
-.menu a { transition: opacity .3s; }
+.menu { --hueco: 3.5rem; --espaciado: .18em; display: flex; align-items: center; font-family: var(--font-title); font-size: 1.05rem; letter-spacing: var(--espaciado); text-transform: uppercase; color: #555; }
+/* Barrita vertical entre secciones: es el borde izquierdo de cada enlace (salvo el primero). Los bordes se
+   ajustan siempre a píxeles enteros, así que todas las barritas se ven exactamente igual de finas.
+   El padding derecho descuenta el espaciado final de las letras para que la barrita quede centrada. */
+.menu a { line-height: 1; padding: .1em calc(var(--hueco) / 2 - var(--espaciado)) .1em calc(var(--hueco) / 2); transition: opacity .3s; }
+.menu a:first-child { padding-left: 0; }
+.menu a:last-child { padding-right: 0; }
+.menu a + a { border-left: 1px solid #8f8a82; }
 .menu a:hover { opacity: .5; }
-/* Barrita vertical entre las secciones del menú (centrada en el hueco; no es clicable) */
-.menu a + a { position: relative; }
-.menu a + a::before { content: ""; position: absolute; left: calc(var(--hueco) / -2); top: 50%; width: 1px; height: 1.2em; background: #8f8a82; transform: translate(-50%, -50%); pointer-events: none; }
 
 /* Escena: foto fija a la izquierda + bloques en escalera a la derecha */
 .escena {
@@ -136,7 +139,7 @@ footer { text-align: center; padding: 6rem 1rem 2.5rem; font-family: var(--font-
   /* Cabecera en dos filas: nombres arriba y menú debajo, ambos centrados */
   .top { flex-direction: column; justify-content: center; gap: .9rem; padding: 0 .5rem; }
   .logo { width: auto; font-size: .8rem; letter-spacing: .25em; }
-  .menu { --hueco: 1.4rem; font-size: .62rem; letter-spacing: .12em; justify-content: center; }
+  .menu { --hueco: 1.4rem; --espaciado: .12em; font-size: .62rem; justify-content: center; }
 
   .escena { grid-template-columns: 27vw 1fr; column-gap: .9rem; }
   .foto { top: calc(var(--header-h) + 1rem); height: auto; display: block; }
