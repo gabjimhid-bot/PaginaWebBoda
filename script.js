@@ -122,16 +122,25 @@ actualizar();
 
 // Cada campo con data-col="Título" se envía como una columna con ese título, siempre en el orden de la página
 // (vacío si está oculto o sin marcar). Para añadir una pregunta basta con ponerle name y data-col en el HTML.
+// Orden FIJO de las columnas en la hoja "Respuestas". Las fórmulas de la pestaña "invitados" usan estas letras
+// (B Nombre … J Comentarios, K Acompañante alergias), así que el orden NO depende de cómo estén colocadas las
+// preguntas en la página. Una pregunta nueva que no esté en esta lista se añade al final.
+const ORDEN_COLUMNAS = ['Nombre', 'Apellidos', 'Asistencia', 'Acompañante nombre', 'Acompañante apellidos',
+  'Alergias', 'Autobús', 'Trayecto autobús', 'Comentarios', 'Acompañante alergias'];
+
 function datosParaEnviar() {
-  const datos = new URLSearchParams();
-  const orden = [];
+  const valores = {};
+  const enPagina = [];
   form.querySelectorAll('[data-col]').forEach((el) => {
     const col = el.dataset.col;
-    if (!datos.has(col)) { datos.set(col, ''); orden.push(col); }
+    if (!(col in valores)) { valores[col] = ''; enPagina.push(col); }
     if (el.disabled) return;
     if ((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
-    datos.set(col, el.value.trim());
+    valores[col] = el.value.trim();
   });
+  const orden = ORDEN_COLUMNAS.filter((c) => c in valores).concat(enPagina.filter((c) => !ORDEN_COLUMNAS.includes(c)));
+  const datos = new URLSearchParams();
+  orden.forEach((c) => datos.set(c, valores[c]));
   datos.set('_orden', orden.join('|')); // Apps Script no conserva el orden de los campos, así que se envía aparte
   return datos;
 }
